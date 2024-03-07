@@ -17,7 +17,7 @@ list_t *add_node(list_t **head, const char *str)
 		free(newnode);
 		return (NULL);
 	}
-	newnode->str = malloc(sizeof(char) + strlen(str) + 1);
+	newnode->str = malloc(sizeof(char) + _strlen(str) + 1);
 	if (newnode->str == NULL)
 	{
 		printf("Can't add a nobody\n");
@@ -34,4 +34,20 @@ list_t *add_node(list_t **head, const char *str)
 	newnode->next = *head;
 	*head = newnode;
 	return (*head);
+}
+
+/**
+ * _strlen - Gets the length of a string
+ * @string: string to be measured
+ * Return: length of string
+*/
+int _strlen(char *string)
+{
+	int number = 0;
+
+	while (*string != '\0')
+	{
+		number++;
+	}
+	return (number);
 }
