@@ -3,15 +3,22 @@
  * list_len - Lists the number of elements
  * @h: head struct
 */
-size_t print_list(const list_t *h)
+size_t list_len(const list_t *h)
 {
-	list_t *node = h;
+	const list_t *node = h;
 	size_t number = 0;
 
-	while (node->next !- NULL)
+	while (node->next != NULL)
+	{
+		if (node->str != NULL)
+		{
+			number++;
+		}
+		node = node->next;
+	}
+	if (node->str != NULL)
 	{
 		number++;
 	}
-	number++;
-	return(number);
+	return (number);
 }
