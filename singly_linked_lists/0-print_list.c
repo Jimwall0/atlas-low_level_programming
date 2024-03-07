@@ -22,6 +22,7 @@ size_t print_list(const list_t *h)
             printf("[%d] %s\n", number, string);
         }
         node = node->next;
+        numb++;
     }
     string = node->str;
     number = node->len;
@@ -33,5 +34,6 @@ size_t print_list(const list_t *h)
     {
         printf("[%d] %s\n", number, string);
     }
+    numb++;
     return (numb);
 }
