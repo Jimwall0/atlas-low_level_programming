@@ -21,14 +21,17 @@ size_t print_list(const list_t *h)
         {
             printf("[%d] %s\n", number, string);
         }
-        if (node->next == NULL)
-        {
-            return (numb);
-        }
-        else
-        {
-            node = node->next;
-        }
+        node = node->next;
     }
-return (numb);
+    string = node->str;
+    number = node->len;
+    if (string == NULL)
+    {
+        printf("[0] (nil)\n");
+    }
+    else
+    {
+        printf("[%d] %s\n", number, string);
+    }
+    return (numb);
 }
