@@ -1,0 +1,1 @@
+Prints the the elements in a struct data type.
