@@ -1,4 +1,4 @@
-#include "main.h"
+#include "lists.h"
 int main(void)
 {
     list_t *head;

@@ -1,4 +1,4 @@
-#include "main.h"
+#include "lists.h"
 /*
  * size_t print_list - prints the the nodes in a singly linked list
  * 
