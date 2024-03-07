@@ -4,7 +4,10 @@
 #include <stdio.h>
 #include <string.h>
 /**
- * list_s - A node to hold some data
+ * struct list_s - A node to hold some data
+ * @str: a string
+ * @len: how many characters are in the string
+ * @next: the next node in the list
 */
 typedef struct list_s
 {
