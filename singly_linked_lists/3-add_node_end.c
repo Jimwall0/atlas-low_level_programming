@@ -16,13 +16,18 @@ list_t *add_node_end(list_t **head, const char *str)
 		free(node);
 		return (node);
 	}
-	node->str = malloc(sizeof(char) * _strlen(str) + 1);
+	while (str[number] != '\0')
+	{
+		number++;
+	}
+	node->str = malloc(sizeof(char) * number + 1);
 	if (node->str == NULL)
 	{
 		free(node->str);
 		free(node);
 		return (NULL);
 	}
+	number = 0;
 	while (str[number] != '\0')
 	{
 		node->str[number] = str[number];
