@@ -9,6 +9,10 @@ size_t print_list(const list_t *h)
     char *string;
     unsigned int number = 0;
     const list_t *node = h;
+    if (node == NULL)
+    {
+        return (numb);
+    }
     while (node->next != NULL)
     {
         string = node->str;
