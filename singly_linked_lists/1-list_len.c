@@ -2,6 +2,7 @@
 /**
  * list_len - Lists the number of elements
  * @h: head struct
+ * Return: number of elements
 */
 size_t list_len(const list_t *h)
 {
