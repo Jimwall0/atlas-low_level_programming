@@ -41,11 +41,11 @@ list_t *add_node(list_t **head, const char *str)
  * @string: string to be measured
  * Return: length of string
 */
-int _strlen(char *string)
+int _strlen(const char *string)
 {
 	int number = 0;
 
-	while (*string != '\0')
+	while (string[number] != '\0')
 	{
 		number++;
 	}
