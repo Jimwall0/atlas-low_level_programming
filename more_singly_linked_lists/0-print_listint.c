@@ -7,5 +7,5 @@
 size_t print_listint(const listint_t *h)
 {
 	printf("%d\n", h->n);
-	return (h);
+	return (1);
 }
