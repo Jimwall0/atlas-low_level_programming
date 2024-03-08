@@ -4,6 +4,7 @@
  * a struct list
  * @head: pointer to the head node
  * @index: what specific node to stop at
+ * Return: the index of the node
 */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
