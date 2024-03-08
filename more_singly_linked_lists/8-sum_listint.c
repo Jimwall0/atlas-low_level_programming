@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * sum_listint = adds the integer element in the structures
+ * sum_listint - adds the integer element in the structures
  * @head: start of the list
  * Return: returns the total of the elements
 */
