@@ -13,7 +13,7 @@ list_t *add_node(list_t **head, const char *str)
 	newnode = malloc(sizeof(list_t));
 	if (newnode == NULL)
 	{
-		printf("Out of storage");
+		printf("Out of storage\n");
 		free(newnode);
 		return (NULL);
 	}
