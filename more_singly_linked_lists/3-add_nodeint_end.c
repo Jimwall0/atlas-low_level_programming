@@ -3,6 +3,7 @@
  * add_nodeint_end - adds a node at the end of the list
  * @head: pointer to location for list of functs
  * @n: integer data in the lists
+ * Return: new start of the list
 */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
