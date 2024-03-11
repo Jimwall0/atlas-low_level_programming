@@ -6,7 +6,7 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int string = strlen(b), sum = 0, problem = 1;
+	unsigned int string = _strlen(b), sum = 0, problem = 1;
 	int num = 0;
 
 	for (num = string - 1; num >= 0; num--)
@@ -16,4 +16,20 @@ unsigned int binary_to_uint(const char *b)
 		problem *= 2;
 	}
 	return (sum);
+}
+
+/**
+ * _strlen - the total length of a string
+ * @string: pointer towards a string
+ * Return: total length
+*/
+int _strlen(const char *string)
+{
+	int num = 0;
+
+	while (string[num] != '\0')
+	{
+		num++;
+	}
+	return (num);
 }
