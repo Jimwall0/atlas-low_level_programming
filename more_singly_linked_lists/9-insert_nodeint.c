@@ -8,8 +8,8 @@
 */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *node = NULL, *temp, *temp2;
-	unsigned int index = 1;
+	listint_t *node = NULL, *temp, *temp2, *check = *head;
+	unsigned int index = 1, max = 1;
 
 	if (head == NULL)
 	{
@@ -22,6 +22,13 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (NULL);
 	}
 	node->n = n;
+	while (check != NULL)
+	{
+		check = check->next;
+		max++;
+	}
+	if (idx > max)
+		return (NULL);
 	if (*head != NULL)
 	{
 		if (idx < 2)
