@@ -5,7 +5,7 @@
 */
 void print_binary(unsigned long int n)
 {
-	long unsigned int bit_mask = 1;
+	unsigned long int bit_mask = 1;
 
 	while ((bit_mask << 1) <= n)
 		bit_mask <<= 1;
