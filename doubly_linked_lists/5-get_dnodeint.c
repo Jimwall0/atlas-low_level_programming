@@ -11,10 +11,17 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 
 	if (head == NULL)
 	{
+		printf("No list\n");
 		return (NULL);
 	}
-	if (index == 1 || index == 0)
+	if ((int)index < 0)
 	{
+		printf("Can't do that so get it right\n");
+		return (NULL);
+	}
+	if (index < 2)
+	{
+		printf("Heres your head\n");
 		return (head);
 	}
 	while (head != NULL && number <= index - 1)
@@ -24,6 +31,7 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 	}
 	if (head == NULL)
 	{
+		printf("You've gone past the limit or it just doesn't exist\n");
 		return (NULL);
 	}
 	return (head);
