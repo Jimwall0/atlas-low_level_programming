@@ -2,7 +2,7 @@
 /**
  * _putchar = prints a single char
  * @character = a character
- * Return: number of characters printed
+ * Return: returns the output
 */
 int _putchar(char character)
 {
