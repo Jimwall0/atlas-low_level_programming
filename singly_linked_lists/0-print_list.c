@@ -14,8 +14,22 @@ size_t print_list(const list_t *h)
 		if (h->str == NULL)
 			printf("[0] (nil)\n");
 		else
-			printf("[%ld] %s\n", strlen(h->str), h->str);
+			printf("[%i] %s\n", _strlen(h->str), h->str);
 		h = h->next;
 	}
+	return (number);
+}
+
+/**
+ * _strlen - prints the char count
+ * @s: the string to count
+ * Return: the number of characters
+*/
+int _strlen(char *s)
+{
+	int number = 0;
+
+	while (s[number] != '\0')
+		number++;
 	return (number);
 }
