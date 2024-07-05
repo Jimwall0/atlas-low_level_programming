@@ -25,7 +25,7 @@ size_t print_list(const list_t *h)
  * @s: the string to count
  * Return: the number of characters
 */
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 	int number = 0;
 
