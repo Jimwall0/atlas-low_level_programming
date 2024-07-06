@@ -3,6 +3,7 @@
  * add_nodeint_end - adds a new node to end of list
  * @head: start of list
  * @n: number data
+ * Return: the list
 */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
