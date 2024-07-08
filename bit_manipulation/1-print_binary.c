@@ -13,7 +13,7 @@ void print_binary(unsigned long int n)
 		bit = bit << 1;
 	while (bit != 0)
 	{
-		if ((bit & n) == 1)
+		if ((bit & n) == bit)
 			printf("%d", 1);
 		else if ((bit & n) == 0)
 			printf("%d", 0);
