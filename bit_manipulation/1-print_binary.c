@@ -5,7 +5,18 @@
 */
 void print_binary(unsigned long int n)
 {
-	if (n > 1)
-		print_binary(n >> 1);
-	printf("%ld", n & 1);
+	unsigned long int bit = 1;
+
+	if (n == 0)
+		printf("%d\n", 0);
+	while (bit < n)
+		bit = bit << 1;
+	while (bit != 0)
+	{
+		if ((bit & n) == 1)
+			printf("%d", 1);
+		else if ((bit & n) == 0)
+			printf("%d", 0);
+		bit = bit >> 1;
+	}
 }
