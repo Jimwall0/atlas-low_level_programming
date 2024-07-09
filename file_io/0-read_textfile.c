@@ -3,16 +3,17 @@
  * read_textfile - reads a text file and prints it
  * @filename: name of the text file
  * @letters: the character count of the file
+ * Return: count of characters or 0 on false
 */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buffer = NULL;
-	int file, letter;
+	int check = 0, file = 0, count;
 
-	if (filename == NULL || letters == 0)
+	if (!filename)
 		return (0);
 	buffer = malloc(sizeof(char) * letters);
-	if (buffer == NULL)
+	if (!buffer)
 	{
 		free(buffer);
 		return (0);
@@ -21,15 +22,24 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!file)
 	{
 		free(buffer);
+		close(file);
 		return (0);
 	}
-	letter = read(file, buffer, letters);
-	if (!letter)
+	check = read(file, buffer, letters);
+	if (!check)
 	{
 		free(buffer);
+		close(file);
 		return (0);
 	}
-	write(1, buffer, letter);
+	count = write(1, buffer, check);
+	if (!count)
+	{
+		free(buffer);
+		close(file);
+		return (0);
+	}
+	free(buffer);
 	close(file);
-	return (letter);
+	return (count);
 }
