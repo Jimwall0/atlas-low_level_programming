@@ -6,8 +6,11 @@
 */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	char buffer[letters];
-	int total, file, letter;
+	char buffer[500];
+	int file, letter;
 
-	file = open(filename, )
+	file = open(filename, O_RDONLY);
+	letter = read(file, buffer, letters);
+	write(1, buffer, letter);
+	return (letter);
 }
