@@ -8,7 +8,7 @@
 int create_file(const char *filename, char *text_content)
 {
 	char *buffer = NULL;
-	int characters, file;
+	int characters, file, loop = 0;
 
 	file = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
 	if (file < 0)
@@ -20,7 +20,8 @@ int create_file(const char *filename, char *text_content)
 		free(buffer);
 		return (0);
 	}
-	buffer = strdup(text_content);
+	for (; text_content[loop] != '\0'; loop++)
+		buffer[loop] = text_content[loop];
 	characters = write(file, buffer, strlen(text_content) + 1);
 	close(file);
 	free(buffer);
