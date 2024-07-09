@@ -11,7 +11,7 @@ void print_binary(unsigned long int n)
 		bit = bit << 1;
 	while (bit != 0)
 	{
-		if (bit > n)
+		if (bit > n && n != 0)
 			bit = bit >> 1;
 		if ((bit & n) == bit)
 			printf("%d", 1);
