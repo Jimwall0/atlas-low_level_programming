@@ -7,6 +7,8 @@
 */
 int set_bit(unsigned long int *n, unsigned int index)
 {
+	if (!index)
+		return (-1);
 	n[0] |= 1 << index;
-	return (n[0]);
+	return (1);
 }
