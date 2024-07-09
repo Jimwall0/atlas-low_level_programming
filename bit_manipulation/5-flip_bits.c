@@ -3,6 +3,7 @@
  * flip_bits - returns the number of bits you need to toggle
  * @n: starting number
  * @m: converted number
+ * Return: the total of bits fliped
 */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
