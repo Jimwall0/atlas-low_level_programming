@@ -7,8 +7,6 @@ void print_binary(unsigned long int n)
 {
 	unsigned long int bit = 1;
 
-	if (n == 0)
-		printf("%d\n", 0);
 	while (bit < n)
 		bit = bit << 1;
 	while (bit != 0)
