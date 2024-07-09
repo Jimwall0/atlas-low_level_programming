@@ -6,9 +6,10 @@
 */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	char buffer[1000000];
+	char *buffer = NULL;
 	int file, letter;
 
+	buffer = malloc(sizeof(char) * letters);
 	file = open(filename, O_RDONLY);
 	letter = read(file, buffer, letters);
 	write(1, buffer, letter);
