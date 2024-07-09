@@ -14,9 +14,9 @@ void print_binary(unsigned long int n)
 		if (bit > n && n != 0)
 			bit = bit >> 1;
 		if ((bit & n) == bit)
-			printf("%d", 1);
+			putchar('1');
 		else
-			printf("%d", 0);
+			putchar('0');
 		bit = bit >> 1;
 	}
 }
