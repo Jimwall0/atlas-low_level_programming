@@ -1,5 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
+#define ULONG_MAX 0xFFFFFFFFUL
 #include <stdio.h>
 
 unsigned int binary_to_uint(const char *b);

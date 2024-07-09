@@ -6,12 +6,9 @@
 void print_binary(unsigned long int n)
 {
 	unsigned long int bit = 1;
-	unsigned long int max = 0xFFFFFFFFUL;
 
 	while (bit < n)
 		bit = bit << 1;
-	if (n > max)
-		n = max;
 	while (bit != 0)
 	{
 		if (bit > n && n != 0)
