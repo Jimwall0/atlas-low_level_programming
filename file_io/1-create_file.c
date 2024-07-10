@@ -3,31 +3,24 @@
  * create_file = makes a new text file
  * @filename: name of the file
  * @text_content: content of file
- * Return: total characters or 0 on false
+ * Return: 0 on true or -1 on false
 */
 int create_file(const char *filename, char *text_content)
 {
-	char *buffer = NULL;
 	int characters, file, loop = 0;
 
-	file = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
-	if (file < 0)
-		return (0);
+	if ((filename == NULL) | (text_content == NULL))
+		return (-1);
+	file = open(filename, O_RDWR | O_TRUNC | O_CREAT, 0666);
+	if (file == -1)
+		return (-1);
 	while (text_content[loop] != '\0')
 		loop++;
-	buffer = malloc(sizeof(char) * loop + 1);
-	if (!buffer)
+	characters = write(file, text_content, loop + 1);
+	if (characters == -1)
 	{
 		close(file);
-		free(buffer);
-		return (0);
+		return (-1);
 	}
-	for (loop = 0; text_content[loop] != '\0'; loop++)
-		buffer[loop] = text_content[loop];
-	characters = write(file, buffer, loop + 1);
-	close(file);
-	free(buffer);
-	if (characters < 0)
-		return (0);
-	return (characters);
+	return (0);
 }
