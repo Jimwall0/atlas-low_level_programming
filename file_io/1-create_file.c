@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * create_file = makes a new text file
+ * create_file - makes a new text file
  * @filename: name of the file
  * @text_content: content of file
- * Return: 0 on true or -1 on false
+ * Return: 1 on true or -1 on false
 */
 int create_file(const char *filename, char *text_content)
 {
@@ -22,5 +22,5 @@ int create_file(const char *filename, char *text_content)
 		close(file);
 		return (-1);
 	}
-	return (0);
+	return (1);
 }
