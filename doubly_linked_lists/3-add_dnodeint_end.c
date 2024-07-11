@@ -3,6 +3,7 @@
  * add_dnodeint_end - adds a node at the end
  * @head: head of a lists
  * @n: int data type
+ * Return: return the list
 */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
