@@ -12,7 +12,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	long unsigned int index = 0;
 	unsigned char *string = _strdup(key);
 
-	if (ht == NULL)
+	if (ht == NULL || key == NULL)
 		return (0);
 	new = malloc(sizeof(hash_node_t));
 	if (new == NULL)
@@ -23,6 +23,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new->key = strdup(key);
 	new->value = strdup(value);
 	index = hash_djb2(string) % ht->size;
+	if (ht->array[index] != NULL)
+		new->next = ht->array[index];
 	ht->array[index] = new;
 	free(string);
 	return (1);
