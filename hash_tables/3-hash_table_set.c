@@ -23,6 +23,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new->key = strdup(key);
 	new->value = strdup(value);
 	index = hash_djb2(string) % ht->size;
+	if (ht->array[index] != NULL)
+		new->next = ht->array[index];
+	ht->array[index] = new;
 	return (1);
 }
 
@@ -34,8 +37,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 unsigned char *_strdup(const char *string)
 {
 	int number = 0;
-	unsigned char *letter;
+	unsigned char *letter = NULL;
 
+	letter = malloc(sizeof(char) * 124);
 	while (string[number] != '\0')
 	{
 		letter[number] = string[number];
