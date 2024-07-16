@@ -5,14 +5,22 @@
 */
 void hash_table_print(const hash_table_t *ht)
 {
-	unsigned long int number = 0;
+	unsigned long int number = 0, count = 0, number2 = 0;
 
 	printf("{");
-	for(; number < ht->size; number++)
+	for (; number < ht->size; number++)
+	{
+		if (ht->array[number] != NULL)
+			count++;
+	}
+	for (number = 0; number < ht->size; number++)
 	{
 		if (ht->array[number] != NULL)
 		{
-			printf("'%s': '%s', ", ht->array[number]->key, ht->array[number]->value);
+			printf("'%s': '%s'", ht->array[number]->key, ht->array[number]->value);
+			if (number2 < count - 1)
+				printf(", ");
+			number2++;
 		}
 	}
 	printf("}\n");
