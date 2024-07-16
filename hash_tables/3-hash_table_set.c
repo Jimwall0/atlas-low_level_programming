@@ -9,7 +9,7 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *new = NULL;
-	long unsigned int index = 0;
+	unsigned long int index = 0;
 	unsigned char *string = _strdup(key);
 
 	if (ht == NULL || key == NULL)
@@ -24,7 +24,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new->value = strdup(value);
 	index = hash_djb2(string) % ht->size;
 	if (ht->array[index] != NULL)
-		new->next = ht->array[index];
+		free(ht->array[index]);
 	ht->array[index] = new;
 	free(string);
 	return (1);
