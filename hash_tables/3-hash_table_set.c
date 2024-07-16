@@ -24,7 +24,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new->value = strdup(value);
 	index = hash_djb2(string) % ht->size;
 	if (ht->array[index] != NULL)
-		free(ht->array[index]);
+		new->next = ht->array[index];
 	ht->array[index] = new;
 	free(string);
 	return (1);
