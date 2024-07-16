@@ -3,17 +3,15 @@
  * hash_table_get - gets the value at a key
  * @ht: table
  * @key: key to retrieve from
+ * Return: the string or NULL on fail
 */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	unsigned long int number = 0;
+	unsigned char *string = _strdup(key);
 
-	if (ht == NULL || key == NULL)
+	if (ht == NULL)
 		return (NULL);
-	for(; number < ht->size; number++)
-	{
-		if (strcmp(key, ht->array[number]->key) == 0)
-			return (ht->array[number]->value);
-	}
+	if (ht->array[hash_djb2(string) % ht->size] != NULL)
+		return (ht->array[hash_djb2(string) % ht->size]->value);
 	return (NULL);
 }
