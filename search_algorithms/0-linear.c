@@ -3,7 +3,8 @@
  * linear_search - searches for value in array
  * @array: array to search for value
  * @size: the size of the array
- * @value: data to find in array.
+ * @value: data to find in array
+ * Return: index or -1 on fail
  */
 int linear_search(int *array, size_t size, int value)
 {
